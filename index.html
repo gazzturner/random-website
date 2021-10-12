@@ -1,0 +1,49 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Important Work Related Documentation</title>
+</head>
+<body>
+	<div id="app">
+		<div>
+			<button v-on:click="selectRandom()">
+				Randomise
+			</button>
+		</div>
+	</div>
+</body>
+</html>
+<script src="https://unpkg.com/vue"></script>
+
+<script>
+const app = new Vue({
+		el: '#app',
+		data: {
+			websites: [
+				'https://www.google.co.uk/search?q=I%27m+Feeling+Curious&csf=b&ct=ifl&cad=2:curious&ei=lhVkYdWsKY74U-7mifAK&ved=0ahUKEwjVz6nTlsLzAhUO_BQKHW5zAq4QnRsIDg&rct=j',
+				'http://www.amazon.com',
+				'http://www.ebay.com',
+				'http://www.bbc.com',
+				'http://www.guardian.co.uk',
+				'https://stackoverflow.com/questions',
+				'https://www.dummies.com/software/microsoft-office/excel/excel-workbook-for-dummies-cheat-sheet/'
+			]
+		},
+		methods: {
+			selectRandom(){
+				this.randomIndex = Math.floor(Math.random() * this.websites.length)
+				var selectedWebsite = this.websites[this.randomIndex]
+				window.open(selectedWebsite)
+			}
+		}
+	}
+)
+</script>
+
+ <style>
+   body {
+    font-family: calibri;
+    color:#282828;
+    margin: 0px;
+  }
+</style>
